@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+:root {
+  --branco-1: #fdfdfd;
+  --cinza-1: #8c8c8c;
+  --azul-escuro-1: #0f1c26;
+  --preto-1: #171b1e;
+}
