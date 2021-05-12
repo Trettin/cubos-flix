@@ -32,13 +32,13 @@ export default function Header(props) {
                 <div className="favoritos">
 
                     <img src={bookmark} alt="" />
-                    <a href="">Favoritos</a>
+                    <a href="https://trettin-cubos-flix.netlify.app/">Favoritos</a>
 
                 </div>
 
                 <div className="promocoes">
                     <img src={promocoes} alt="ícone de promoções" />
-                    <a href="">Promoções</a>
+                    <a href="https://trettin-cubos-flix.netlify.app/">Promoções</a>
                 </div>
 
                 <div className="profile">

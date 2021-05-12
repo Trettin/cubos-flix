@@ -19,18 +19,18 @@ export default function MenuHamburguer(props) {
             <div className="favoritos-mobile">
 
                     <img src={bookmark} alt="ícone de marcador de página" />
-                    <a href="#">Favoritos</a>
+                    <a href="https://trettin-cubos-flix.netlify.app/">Favoritos</a>
 
             </div>
 
             <div className="promocoes-mobile">
                     <img src={promocoes} alt="ícone de promoções" />
-                    <a href="#">Promoções</a>
+                    <a href="https://trettin-cubos-flix.netlify.app/">Promoções</a>
             </div>
 
             <div className="sacola">
                     <img src={sacola} alt="ícone de sacola" />
-                    <a href="#">Sacola</a>
+                    <a href="https://trettin-cubos-flix.netlify.app/">Sacola</a>
             </div>
 	
         </div>
