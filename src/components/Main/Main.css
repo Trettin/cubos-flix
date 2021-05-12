@@ -16,8 +16,9 @@ main {
 }
 
 .top-filmes {
-  display: flex;
+  display: grid;
   gap: 1.5rem;
+  grid-template-columns: repeat(5, min-content);
 }
 
 .filme-card {
@@ -129,6 +130,7 @@ main {
 .categories {
   display: flex;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .categorie-button {
@@ -157,6 +159,13 @@ main {
 @media (max-width: 1090px) {
   main {
     padding: 1.5rem 1.5rem;
+  }
+
+  .top-filmes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, min-content);
+    grid-auto-flow: column;
   }
 
   .top-filmes,
