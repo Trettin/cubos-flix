@@ -1,6 +1,10 @@
 header {
   background-color: var(--azul-escuro-1);
   padding: 1.5em 96px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .container--header {
