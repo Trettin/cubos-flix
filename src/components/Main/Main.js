@@ -20,8 +20,12 @@ export default function Main(props) {
             const novoFiltro = Movies.filter(filme => filme.categories.includes(filtro));
             setFilmesFiltrados(novoFiltro)
         }
-        
     }, [filtro]);
+
+    function handleInput(event) {
+        const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(event.target.value.toLowerCase()));
+        setFilmesFiltrados(filmePesquisado)
+    }
 
     return(
         <main>
@@ -59,7 +63,7 @@ export default function Main(props) {
 
                 <div className="main-pesquisa">
 
-                    <input type="text" placeholder='Pesquise filmes...' />
+                    <input type="text" placeholder='Pesquise filmes...' onChange={(e)=> handleInput(e)}/>
                     <img className='main-lupa' src={lupa} alt="ícone de pesquisa" />
 
                 </div>
