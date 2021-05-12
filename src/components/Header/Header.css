@@ -1,6 +1,6 @@
 header {
   background-color: var(--azul-escuro-1);
-  padding: 1.5em 2rem;
+  padding: 1.5em 96px;
 }
 
 .container--header {
@@ -8,7 +8,6 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  max-width: 1280px;
   color: var(--branco-1);
 }
 
@@ -86,9 +85,23 @@ a {
 }
 
 @media (max-width: 1090px) {
+  header {
+    background-color: var(--azul-escuro-1);
+    padding: 1.5em 1.5rem;
+  }
+
+  .container--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--branco-1);
+  }
+
   .menu-button {
     display: inline;
     z-index: 2;
+    padding: 0;
   }
 
   .pesquisa,

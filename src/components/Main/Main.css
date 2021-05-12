@@ -1,0 +1,176 @@
+main {
+  padding: 0 0 1.5rem 96px;
+}
+
+.top,
+.movies {
+  color: var(--branco-1);
+  margin-bottom: 2.5rem;
+}
+
+.top h1,
+.movies h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.top-filmes {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.filme-card {
+  min-width: 168px;
+  width: 168px;
+  height: 300px;
+  padding: 12px 8px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.star {
+  width: 1rem;
+  height: 1rem;
+}
+
+.star:hover {
+  cursor: pointer;
+}
+
+.starred {
+  fill: white;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(20, 20, 20, 0.75);
+  margin-bottom: 0.5rem;
+  padding: 0.25em 0.5em;
+  align-items: flex-end;
+}
+
+.movie-info h3 {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.starCount {
+  color: var(--dourado-1);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.starCount img {
+  width: 1rem;
+}
+
+.filme-card button {
+  border: none;
+  width: 100%;
+  text-align: start;
+  color: var(--branco-1);
+  background: var(--lilas-1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  padding: 0.333em 0.667em;
+}
+
+.filme-card button:hover {
+  cursor: pointer;
+  background: linear-gradient(
+      0deg,
+      rgba(46, 46, 46, 0.45),
+      rgba(46, 46, 46, 0.45)
+    ),
+    #a785ed;
+}
+
+/* 
+    SEÇÃO DE FILMES
+*/
+
+.main-pesquisa {
+  background-color: var(--preto-1);
+  width: 100%;
+  display: none;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.main-pesquisa input {
+  background-color: var(--preto-1);
+  color: var(--branco-1);
+  border: none;
+  padding: 1em;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.main-pesquisa input:focus {
+  outline: none;
+  border: 0.063rem solid var(--branco-1);
+}
+
+.main-lupa {
+  position: absolute;
+  right: 1rem;
+  top: auto;
+  bottom: auto;
+  width: 1rem;
+  height: 1rem;
+  align-self: center;
+}
+
+.categories {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.categorie-button {
+  border: 2px solid #ffffff;
+  background: rgba(225, 131, 200, 0.2);
+  color: #fff;
+  opacity: 0.2;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 10.5em;
+  min-width: 10.5em;
+  height: 2.375em;
+  cursor: pointer;
+}
+
+.categorie-button:hover {
+  color: var(--rosa-1);
+  border-color: var(--rosa-1);
+  background-color: transparent;
+  opacity: 1;
+}
+
+/* 
+    MEDIAQUERY AMBAS SEÇÕES
+*/
+@media (max-width: 1090px) {
+  main {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .top-filmes,
+  .categories {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .main-pesquisa {
+    display: flex;
+  }
+
+  .categorie-button {
+    width: 6.5em;
+    min-width: 6.5em;
+  }
+}

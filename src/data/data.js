@@ -1,6 +1,6 @@
 const BASE_PATH = 'https://image.tmdb.org/t/p/original/';
 
-export default Movies = [
+export const Movies = [
   {
     title: 'Mortal Kombat',
     backgroundImg: `${BASE_PATH}w8BVC3qrCWCiTHRz4Rft12dtQF0.jpg`,
@@ -42,7 +42,7 @@ export default Movies = [
     ]
   },
   {
-    title: 'Demon Slayer: O Trem Infinito',
+    title: 'Demon Slayer',
     backgroundImg: `${BASE_PATH}m9cn5mhW519QKr1YGpGxNWi98VJ.jpg`,
     isStarred: false,
     starsCount: 8.4,
