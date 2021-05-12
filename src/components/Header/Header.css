@@ -7,7 +7,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 6rem;
+  margin: 0 auto;
   max-width: 1280px;
   color: var(--branco-1);
 }
@@ -54,20 +54,47 @@ header {
 .favoritos {
   display: flex;
   gap: 8px;
+  grid-area: favoritos;
 }
 
 .promocoes {
   display: flex;
   gap: 8px;
+  grid-area: promocoes;
 }
 
 .profile {
   display: flex;
   align-items: center;
   gap: 8px;
+  grid-area: profile;
 }
 
 .profile img {
   width: 3.5rem;
   height: 3.5rem;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+
+a {
+  all: unset;
+}
+
+@media (max-width: 1090px) {
+  .menu-button {
+    display: inline;
+    z-index: 2;
+  }
+
+  .pesquisa,
+  .favoritos,
+  .promocoes,
+  .profile {
+    display: none;
+  }
 }

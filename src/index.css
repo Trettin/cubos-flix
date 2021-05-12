@@ -9,4 +9,9 @@
   --cinza-1: #8c8c8c;
   --azul-escuro-1: #0f1c26;
   --preto-1: #171b1e;
+  --preto-2: #1d2226;
+}
+
+body {
+  background-color: var(--preto-2);
 }
