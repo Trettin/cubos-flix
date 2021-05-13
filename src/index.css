@@ -23,3 +23,33 @@
 body {
   background-color: var(--preto-2);
 }
+
+@font-face {
+  font-family: "Manrope";
+  src: url(./assets/fonts/Manrope/Manrope-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(./assets/fonts/Manrope/Manrope-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(./assets/fonts/Manrope/Manrope-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(./assets/fonts/Manrope/Manrope-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Quantico";
+  src: url(./assets/fonts/Quantico/Quantico-Regular.ttf);
+  font-weight: 400;
+}
