@@ -9,7 +9,7 @@ export default function Bag() {
     return(
         <div className='bag'>
             <div className='bag-header'>
-                <img src={sacola} alt="ícone de uma sacola" />
+                <img className='img-sacola' src={sacola} alt="ícone de uma sacola" />
                 Sacola
             </div>
 

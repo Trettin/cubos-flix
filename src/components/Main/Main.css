@@ -23,9 +23,8 @@ main {
 }
 
 .filme-card {
-  min-width: 168px;
-  width: 168px;
-  height: 300px;
+  aspect-ratio: 168/300;
+  width: 10rem;
   padding: 12px 8px 6px;
   display: flex;
   flex-direction: column;
@@ -141,8 +140,8 @@ main {
   opacity: 0.2;
   font-size: 1rem;
   font-weight: 600;
-  width: 10.5em;
-  min-width: 10.5em;
+  width: 10rem;
+  min-width: 10rem;
   height: 2.375em;
   cursor: pointer;
 }

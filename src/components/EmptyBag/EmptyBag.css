@@ -1,16 +1,21 @@
 .empty {
   color: var(--branco-1);
   text-align: center;
-  padding: 2rem 1rem 1.5rem;
+  padding: 1.5rem 1rem 0rem;
 }
 
 .empty h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25em;
 }
 
 .empty p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
   opacity: 0.8;
+  font-size: 1em;
+}
+
+.empty img {
+  width: 9em;
 }

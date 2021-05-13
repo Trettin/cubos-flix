@@ -3,24 +3,30 @@
   right: 6rem;
   top: 9rem;
 
-  width: 312px;
+  width: 18em;
   background-color: var(--preto-1);
 
   display: flex;
   flex-direction: column;
+
+  font-size: 0.875rem;
 }
 
 .bag-header {
   background-color: var(--lilas-1);
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: 700;
   color: var(--branco-1);
-  padding: 1rem 0;
+  padding: 0.5em 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+}
+
+.img-sacola {
+  width: 1.5em;
 }
 
 .bag-footer {
@@ -30,7 +36,7 @@
 }
 
 .bag-footer p {
-  font-size: 12px;
+  font-size: 0.75em;
   line-height: 150%;
   margin-bottom: 0.125rem;
 }
