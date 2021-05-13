@@ -133,7 +133,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.categorie-button {
+.category-button {
   border: 2px solid #ffffff;
   background: rgba(225, 131, 200, 0.2);
   color: #fff;
@@ -146,10 +146,16 @@ main {
   cursor: pointer;
 }
 
-.categorie-button:hover {
+.category-button:hover {
   color: var(--rosa-1);
   border-color: var(--rosa-1);
   background-color: transparent;
+  opacity: 1;
+}
+
+.category-active {
+  color: var(--rosa-1);
+  border-color: var(--rosa-1);
   opacity: 1;
 }
 

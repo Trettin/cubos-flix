@@ -12,7 +12,23 @@ export default function Main(props) {
     const [filtro, setFiltro] = useState('Todos');
     const [filmesFiltrados, setFilmesFiltrados] = useState(Movies);
 
-    const categories = [{filtro: 'Todos', dataCategory: 'Todos'}, {filtro: 'Ação', dataCategory: 'action'}, {filtro: 'Romance', dataCategory: 'romance'}, {filtro: 'Ficção científica', dataCategory: 'science fiction'}, {filtro: 'Terror', dataCategory: 'horror'}]
+    const categories = [
+        {
+            filtro: 'Todos', dataCategory: 'Todos'
+        },
+        {
+            filtro: 'Ação', dataCategory: 'action'
+        }, 
+        {
+            filtro: 'Romance', dataCategory: 'romance'
+        }, 
+        {
+            filtro: 'Ficção científica', dataCategory: 'science fiction'
+        }, 
+        {
+            filtro: 'Terror', dataCategory: 'horror'
+        }
+    ]
     
     useEffect(() => {
         if (filtro === 'Todos') {
@@ -75,7 +91,7 @@ export default function Main(props) {
                 <div className="categories">
                     {categories.map(category => {
                         return(
-                            <button className='categorie-button' onClick={()=> {
+                            <button className={filtro === category.dataCategory ? 'category-button category-active' : 'category-button'} onClick={()=> {
                                 setFiltro(category.dataCategory)
                             }}>{category.filtro}</button>
                         );
