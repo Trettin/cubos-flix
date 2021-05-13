@@ -24,7 +24,7 @@ main {
 
 .filme-card {
   aspect-ratio: 168/300;
-  width: 10rem;
+  width: 8.5rem;
   padding: 12px 8px 6px;
   display: flex;
   flex-direction: column;
