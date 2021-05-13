@@ -129,7 +129,7 @@ main {
 
 .categories {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--gap-btw-cards);
   margin-bottom: 1.5rem;
 }
 
