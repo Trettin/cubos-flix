@@ -51,6 +51,7 @@ main {
   margin-bottom: 0.5rem;
   padding: 0.25em 0.5em;
   align-items: flex-end;
+  gap: 0.2rem;
 }
 
 .movie-info h3 {
@@ -61,8 +62,9 @@ main {
 
 .starCount {
   color: var(--dourado-1);
-  display: flex;
-  gap: 0.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
 }
 
 .starCount img {
