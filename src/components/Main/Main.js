@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import {Movies} from '../../data/data';
 import goldenStar from '../../assets/images/golden-star.svg'
 import lupa from '../../assets/images/search-icon.svg';
+import BannerPromo from '../BannerPromo/BannerPromo';
 
 export default function Main(props) {
     const topMovies = Movies.slice(0,5);
@@ -29,6 +30,9 @@ export default function Main(props) {
 
     return(
         <main>
+
+            <BannerPromo />
+
             <div className='top'>
                 <h1>Top Filmes</h1>
                 

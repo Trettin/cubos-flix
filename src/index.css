@@ -15,6 +15,9 @@
   --dourado-1: #fbcd6e;
   --rosa-1: #e183c8;
   --rosa-2: #e25ebf;
+
+  --movie-card-width: 8.5rem;
+  --gap-btw-cards: 1.5rem;
 }
 
 body {

@@ -1,0 +1,7 @@
+.cupom-desconto {
+  width: calc(var(--movie-card-width) * 5 + 4 * var(--gap-btw-cards));
+  height: 7rem;
+  margin-bottom: 1.5rem;
+
+  cursor: pointer;
+}
