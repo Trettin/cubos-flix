@@ -138,7 +138,7 @@ main {
   background: rgba(225, 131, 200, 0.2);
   color: #fff;
   opacity: 0.2;
-  font-size: 1rem;
+  font-size: max-content;
   font-weight: 600;
   width: var(--movie-card-width);
   min-width: var(--movie-card-width);
