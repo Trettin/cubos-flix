@@ -1,0 +1,81 @@
+.bag {
+  position: fixed;
+  right: 6rem;
+  top: 9rem;
+
+  width: 312px;
+  background-color: var(--preto-1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.bag-header {
+  background-color: var(--lilas-1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--branco-1);
+  padding: 1rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.bag-footer {
+  padding: 0 1rem 1.5rem;
+
+  color: var(--branco-1);
+}
+
+.bag-footer p {
+  font-size: 12px;
+  line-height: 150%;
+  margin-bottom: 0.125rem;
+}
+
+.bag-footer input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  background-color: var(--preto-3);
+  color: var(--branco-1);
+  opacity: 0.4;
+  border: none;
+
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.div-input {
+  position: relative;
+  display: flex;
+}
+
+.div-input img {
+  position: absolute;
+  right: 1rem;
+  align-self: center;
+}
+
+.confirmar-compra {
+  border: none;
+  background-color: var(--rosa-2);
+  color: var(--branco-1);
+  font-weight: 700;
+
+  padding: 1rem;
+  margin: 0 1rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1090px) {
+  .bag {
+    position: unset;
+    margin: 0 auto 2rem;
+    width: max-content;
+  }
+}
