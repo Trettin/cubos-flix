@@ -29,10 +29,37 @@ function App() {
     setFilmesFiltrados(filmePesquisado)
   }
 
+  function adicionarNaSacola(event) {
+        
+    const temNaSacola =  sacola.find(filme => filme.title === event.target.value);
+    
+    if (temNaSacola) {
+      temNaSacola.quantidade ++;
+      setSacola([...sacola]);
+      
+      // localStorage.setItem('sacola', JSON.stringify(sacola));
+
+
+    } else {
+      const filmeNaSacola = Movies.find(movie=> movie.title === event.target.value);
+      const dadosFilme = {
+        title: filmeNaSacola.title,
+        capa: filmeNaSacola.backgroundImg,
+        preco: filmeNaSacola.price,
+        quantidade: 1
+      }
+      setSacola([...sacola, dadosFilme]);
+      // localStorage.setItem('sacola', JSON.stringify(sacola));
+    }
+    setIsEmpty(false);
+  }
+
+  
+
   return (
     <div className="App-Cubos-Flix">
       <Header handleInput={(event)=>handleInput(event)} />
-      <Main filmesFiltrados={filmesFiltrados} handleInput={(event)=>handleInput(event)} setFiltro={(category)=> setFiltro(category)} filtro={filtro} setIsEmpty={(boolean)=> setIsEmpty(boolean)} sacola={sacola} setSacola={(array)=> setSacola(array)} />
+      <Main filmesFiltrados={filmesFiltrados} handleInput={(event)=>handleInput(event)} setFiltro={(category)=> setFiltro(category)} filtro={filtro} adicionarNaSacola={(e) => adicionarNaSacola(e)} />
       <Bag isEmpty={isEmpty} setSacola={(array)=> setSacola(array)} sacola={sacola}/>
     </div>
   );

@@ -33,37 +33,6 @@ export default function Main(props) {
         }
     ]
 
-    function adicionarNaSacola(event) {
-        
-        const temNaSacola =  props.sacola.find(filme=> filme.title === event.target.value);
-        
-        if (temNaSacola) {
-            temNaSacola.quantidade ++;
-            props.setSacola([...props.sacola]);
-            
-            localStorage.setItem('sacola', JSON.stringify(props.sacola));
-
-            // console.log(localStorage.getItem('sacola'))
-            // console.log(props.sacola, 'if')
-
-        } else {
-            const filmeNaSacola = Movies.find(movie=> movie.title === event.target.value);
-            const dadosFilme = {
-                title: filmeNaSacola.title,
-                capa: filmeNaSacola.backgroundImg,
-                preco: filmeNaSacola.price,
-                quantidade: 1
-            }
-            props.setSacola([...props.sacola, dadosFilme]);
-            localStorage.setItem('sacola', JSON.stringify(props.sacola));
-
-            // console.log(localStorage.getItem('sacola'))
-            // console.log(props.sacola)
-        }
-        
-        props.setIsEmpty(false);
-    }
-
     return(
         <main>
 
@@ -91,7 +60,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button onClick={(e)=> adicionarNaSacola(e)} value={filme.title}>Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={(e)=> props.adicionarNaSacola(e)} value={filme.title}>Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>
@@ -137,7 +106,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button onClick={(e)=> adicionarNaSacola(e)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={(e)=> props.adicionarNaSacola(e)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>
