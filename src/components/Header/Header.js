@@ -23,8 +23,8 @@ export default function Header(props) {
                 <img className='logo' src={logo} alt="Cubos Flix logotipo" />
 
                 <div className="pesquisa">
-
-                    <input type="text" placeholder='Pesquise filmes...' />
+                    
+                    <input type="text" placeholder='Pesquise filmes...' onChange={(event)=> props.handleInput(event)} />
                     <img className='lupa' src={lupa} alt="ícone de pesquisa" />
 
                 </div>

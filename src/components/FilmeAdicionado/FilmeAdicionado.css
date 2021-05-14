@@ -1,0 +1,42 @@
+.filme-adicionado {
+  margin: 0 1rem;
+  height: 5.5rem;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
+
+.adicionado-img {
+  width: 2.5rem;
+  margin-right: 0.875rem;
+}
+
+.titulo-e-preco {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-qtd {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.quantidade {
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aumentar-quantidade,
+.diminuir-quantidade {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

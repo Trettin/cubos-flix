@@ -1,16 +1,19 @@
 import './Main.css';
-import { useState, useEffect } from 'react';
-import {Movies} from '../../data/data';
+import { useState } from 'react';
 import goldenStar from '../../assets/images/golden-star.svg'
 import lupa from '../../assets/images/search-icon.svg';
 import BannerPromo from '../BannerPromo/BannerPromo';
+import {Movies} from '../../data/data';
+
 
 export default function Main(props) {
     const topMovies = Movies.slice(0,5);
 
     const [starMode, setStarMode] = useState(false);
-    const [filtro, setFiltro] = useState('Todos');
-    const [filmesFiltrados, setFilmesFiltrados] = useState(Movies);
+    const [temCupom, setTemCupom] = useState(false);
+    const [timeIsOver, setTimeIsOver] = useState(false);
+
+
 
     const categories = [
         {
@@ -29,25 +32,41 @@ export default function Main(props) {
             filtro: 'Terror', dataCategory: 'horror'
         }
     ]
-    
-    useEffect(() => {
-        if (filtro === 'Todos') {
-            setFilmesFiltrados(Movies);
-        } else {
-            const novoFiltro = Movies.filter(filme => filme.categories.includes(filtro));
-            setFilmesFiltrados(novoFiltro)
-        }
-    }, [filtro]);
 
-    function handleInput(event) {
-        const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(event.target.value.toLowerCase()));
-        setFilmesFiltrados(filmePesquisado)
+    function adicionarNaSacola(event) {
+        
+        const temNaSacola =  props.sacola.find(filme=> filme.title === event.target.value);
+        
+        if (temNaSacola) {
+            temNaSacola.quantidade ++;
+            props.setSacola((prevState)=> prevState+[...props.sacola]);
+            
+            localStorage.setItem('sacola', JSON.stringify(props.sacola));
+            console.log(localStorage.getItem('sacola'))
+            console.log(props.sacola, 'if')
+
+        } else {
+            const filmeNaSacola = Movies.find(movie=> movie.title === event.target.value);
+            const dadosFilme = {
+                title: filmeNaSacola.title,
+                capa: filmeNaSacola.backgroundImg,
+                preco: filmeNaSacola.price,
+                quantidade: 1
+            }
+            props.setSacola(()=>[...props.sacola, dadosFilme]);
+            localStorage.setItem('sacola', JSON.stringify(props.sacola));
+            console.log(localStorage.getItem('sacola'))
+            console.log(props.sacola)
+        }
+        props.setIsEmpty(()=>false);
     }
 
     return(
         <main>
 
-            <BannerPromo />
+            {temCupom || timeIsOver ? '' : <BannerPromo aplicarCupom={()=> {
+                setTemCupom(true)}} time={()=> setTimeIsOver(true)}/> }
+            
 
             <div className='top'>
                 <h1>Top Filmes</h1>
@@ -69,7 +88,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button>Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={(e)=> adicionarNaSacola(e)} value={filme.title}>Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>
@@ -83,7 +102,7 @@ export default function Main(props) {
 
                 <div className="main-pesquisa">
 
-                    <input type="text" placeholder='Pesquise filmes...' onChange={(e)=> handleInput(e)}/>
+                    <input type="text" placeholder='Pesquise filmes...' onChange={(e)=> props.handleInput(e)}/>
                     <img className='main-lupa' src={lupa} alt="ícone de pesquisa" />
 
                 </div>
@@ -91,15 +110,15 @@ export default function Main(props) {
                 <div className="categories">
                     {categories.map(category => {
                         return(
-                            <button className={filtro === category.dataCategory ? 'category-button category-active' : 'category-button'} onClick={()=> {
-                                setFiltro(category.dataCategory)
+                            <button className={props.filtro === category.dataCategory ? 'category-button category-active' : 'category-button'} onClick={()=> {
+                                props.setFiltro(category.dataCategory)
                             }}>{category.filtro}</button>
                         );
                     })}
                 </div>
 
                 <div className="top-filmes">
-                    {filmesFiltrados.map(filme => {
+                    {props.filmesFiltrados.map(filme => {
                         return(
                             <div className='filme-card' style={{background: `url(${filme.backgroundImg}) no-repeat center / cover`}}>
 
@@ -115,7 +134,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button>Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={(e)=> adicionarNaSacola(e)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>

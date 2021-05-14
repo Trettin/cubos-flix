@@ -2,9 +2,17 @@ import './Bag.css';
 import sacola from '../../assets/images/bag-icon.svg';
 import EmptyBag from '../EmptyBag/EmptyBag';
 import ticket from '../../assets/images/coupon-icon.svg';
+import FilmeAdicionado from '../FilmeAdicionado/FilmeAdicionado';
+import { useEffect, useState } from 'react';
 
-export default function Bag() {
-    let isEmpty = true;
+
+export default function Bag(props) {
+    const [filmesNaSacola, setFilmesNaSacola] = useState([]);
+    
+    useEffect(() => {
+       setFilmesNaSacola(()=>JSON.parse(localStorage.getItem('sacola')))
+    }, [props.sacola]);
+
 
     return(
         <div className='bag'>
@@ -13,7 +21,11 @@ export default function Bag() {
                 Sacola
             </div>
 
-            {isEmpty? <EmptyBag /> : ''}
+            {props.isEmpty? <EmptyBag /> : filmesNaSacola.map(filme => {
+                return(
+                    <FilmeAdicionado title={filme.title} capa={filme.capa} preco={filme.preco} quantidade={filme.quantidade} />
+                );
+            })}
 
             <div className="bag-footer">
                 <p>Insira seu cupom</p>
@@ -23,7 +35,7 @@ export default function Bag() {
                 </div>
             </div>
 
-            {isEmpty? '' : 
+            {props.isEmpty? '' : 
                 <button className="confirmar-compra">
                     Confirme seus dados <span>{`R$ `}</span>
                 </button>

@@ -1,4 +1,6 @@
 .cupom-desconto {
+  background: url("../../assets/images/bg-promotion.svg") no-repeat right /
+    cover;
   width: calc(var(--movie-card-width) * 5 + 4 * var(--gap-btw-cards));
   height: 7rem;
   margin-bottom: 1.5rem;
@@ -38,6 +40,10 @@
   font-size: 1rem;
 }
 
+.cupom-span {
+  margin-left: 1rem;
+}
+
 .aproveite img,
 .finalizaEm img {
   width: 2rem;
@@ -48,7 +54,6 @@
 .finalizaEm-footer {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .finalizaEm h2 {
@@ -56,9 +61,75 @@
   font-weight: 300;
 }
 
+.finalizaEm-footer span {
+  margin-left: 1rem;
+}
+
 .money {
   height: 9rem;
   position: absolute;
   top: -1.8rem;
   right: 2.5rem;
+}
+
+@media (max-width: 1090px) {
+  .cupom-desconto {
+    background: url("../../assets/images/mobile-bg-promotion.svg") no-repeat
+      right / cover;
+
+    width: 100%;
+    height: 281px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+
+    position: relative;
+  }
+
+  .aproveite-footer {
+    display: grid;
+    grid-template-areas: "cupom cupom" "ticket html";
+    grid-template-columns: min-content;
+    gap: 0.5rem;
+  }
+
+  .cupom-span {
+    margin: 0;
+    grid-area: cupom;
+  }
+  .aproveite img {
+    grid-area: ticket;
+  }
+  .html {
+    grid-area: html;
+  }
+
+  .aproveite h1 {
+    width: 200px;
+  }
+
+  .finalizaEm {
+    justify-content: unset;
+    height: unset;
+  }
+
+  .finalizaEm h2,
+  .aproveite .cupom-span {
+    font-size: 0.875rem;
+  }
+
+  .finalizaEm span {
+    font-size: 1.5rem;
+  }
+
+  .money {
+    height: 9rem;
+    position: absolute;
+    top: -1.8rem;
+    right: -2rem;
+  }
 }
