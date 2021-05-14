@@ -60,7 +60,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button onClick={(e)=> props.adicionarNaSacola(e)} value={filme.title}>Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={()=> props.adicionarNaSacola(filme.title)} value={filme.title}>Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>
@@ -106,7 +106,7 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button onClick={(e)=> props.adicionarNaSacola(e)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={()=> props.adicionarNaSacola(filme.title)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
                                 </div>
 
                             </div>

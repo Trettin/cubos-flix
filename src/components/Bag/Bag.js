@@ -7,11 +7,6 @@ import { useEffect, useState } from 'react';
 
 
 export default function Bag(props) {
-    // const [filmesNaSacola, setFilmesNaSacola] = useState([]);
-    // useEffect(() => {
-    //     const fromLS = JSON.parse(localStorage.getItem('sacola'))
-    //    setFilmesNaSacola(fromLS)
-    // }, []);
 
     useEffect(() => {
 
@@ -34,19 +29,22 @@ export default function Bag(props) {
                 filme.quantidade++;
             }
         })
-        
         props.setSacola(filmesNaSacola);
+        localStorage.setItem('sacola', JSON.stringify(filmesNaSacola));
+
     }
 
     function handleDiminuirQtd(event) {
-        const filmesNaSacola = [...props.sacola];
+        let filmesNaSacola = [...props.sacola];
         filmesNaSacola.map(filme=> {
             if (filme.title === event.target.parentElement.value) {
                 filme.quantidade--;
             }
         })
+        filmesNaSacola = filmesNaSacola.filter(filme => filme.quantidade > 0);
         
         props.setSacola(filmesNaSacola);
+        localStorage.setItem('sacola', JSON.stringify(filmesNaSacola));
     }
 
     return(
@@ -56,7 +54,7 @@ export default function Bag(props) {
                 Sacola
             </div>
 
-            {props.isEmpty? <EmptyBag /> : props.sacola.map(filme => {
+            {props.sacola.length === 0 ? <EmptyBag /> : props.sacola.map(filme => {
                 return(
                     <FilmeAdicionado 
                         title={filme.title} 
@@ -77,7 +75,7 @@ export default function Bag(props) {
                 </div>
             </div>
 
-            {props.isEmpty? '' : 
+            {props.sacola.length === 0? '' : 
                 <button className="confirmar-compra">
                     Confirme seus dados <span>R$ {props.price}</span>
                 </button>

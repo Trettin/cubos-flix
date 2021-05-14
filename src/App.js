@@ -9,12 +9,12 @@ import {Movies} from './data/data';
 
 
 function App() {
+  const sacolaFromLocalStorage = JSON.parse(localStorage.getItem('sacola'));
   const [filmesFiltrados, setFilmesFiltrados] = useState(Movies);
   const [filtro, setFiltro] = useState('Todos');
-  const [isEmpty, setIsEmpty] = useState(true);
   const [sacola, setSacola] = useState([]);
   const [price, setPrice] = useState(0);
-
+  
   useEffect(() => {
     if (filtro === 'Todos') {
         setFilmesFiltrados(Movies);
@@ -24,24 +24,31 @@ function App() {
     }
 }, [filtro]);
 
+  useEffect(() => {
+
+    if (sacolaFromLocalStorage) {
+      setSacola(sacolaFromLocalStorage);
+    }
+    
+  }, []);
+
   function handleInput(event) {
     const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(event.target.value.toLowerCase()));
     setFilmesFiltrados(filmePesquisado)
+    console.log(sacola)    
+
   }
 
-  function adicionarNaSacola(event) {
-        
-    const temNaSacola =  sacola.find(filme => filme.title === event.target.value);
+  function adicionarNaSacola(movieTitle) {
+    const temNaSacola =  sacola.find(filme => filme.title === movieTitle);
     
     if (temNaSacola) {
       temNaSacola.quantidade ++;
       setSacola([...sacola]);
-      
-      // localStorage.setItem('sacola', JSON.stringify(sacola));
-
+      localStorage.setItem('sacola', JSON.stringify(sacola));
 
     } else {
-      const filmeNaSacola = Movies.find(movie=> movie.title === event.target.value);
+      const filmeNaSacola = Movies.find(movie=> movie.title === movieTitle);
       const dadosFilme = {
         title: filmeNaSacola.title,
         capa: filmeNaSacola.backgroundImg,
@@ -49,9 +56,9 @@ function App() {
         quantidade: 1
       }
       setSacola([...sacola, dadosFilme]);
-      // localStorage.setItem('sacola', JSON.stringify(sacola));
+      localStorage.setItem('sacola', JSON.stringify([...sacola, dadosFilme]));
+    
     }
-    setIsEmpty(false);
   }
 
   return (
@@ -69,7 +76,6 @@ function App() {
       />
 
       <Bag 
-        isEmpty={isEmpty} 
         setSacola={(array)=> setSacola(array)} 
         sacola={sacola}
         price={price}
