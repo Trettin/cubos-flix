@@ -13,6 +13,42 @@ export default function Bag(props) {
     //    setFilmesNaSacola(fromLS)
     // }, []);
 
+    useEffect(() => {
+
+        if (props.sacola.length >0) {
+            let precoSacola = 0
+            for (let filme of props.sacola) {
+               precoSacola += filme.preco * filme.quantidade;
+
+            }
+           props.setPrice(precoSacola)
+           return
+        }
+        props.setPrice(0)
+    }, [props.sacola]);
+
+    function handleAumentarQtd(event) {
+        const filmesNaSacola = [...props.sacola];
+        filmesNaSacola.map(filme=> {
+            if (filme.title === event.target.parentElement.value) {
+                filme.quantidade++;
+            }
+        })
+        
+        props.setSacola(filmesNaSacola);
+    }
+
+    function handleDiminuirQtd(event) {
+        const filmesNaSacola = [...props.sacola];
+        filmesNaSacola.map(filme=> {
+            if (filme.title === event.target.parentElement.value) {
+                filme.quantidade--;
+            }
+        })
+        
+        props.setSacola(filmesNaSacola);
+    }
+
     return(
         <div className='bag'>
             <div className='bag-header'>
@@ -22,7 +58,14 @@ export default function Bag(props) {
 
             {props.isEmpty? <EmptyBag /> : props.sacola.map(filme => {
                 return(
-                    <FilmeAdicionado title={filme.title} capa={filme.capa} preco={filme.preco} quantidade={filme.quantidade} />
+                    <FilmeAdicionado 
+                        title={filme.title} 
+                        capa={filme.capa} 
+                        preco={filme.preco} 
+                        quantidade={filme.quantidade} 
+                        handleAumentarQtd={(e)=> handleAumentarQtd(e)}
+                        handleDiminuirQtd={(e)=> handleDiminuirQtd(e)}
+                    />
                 );
             })}
 
@@ -36,7 +79,7 @@ export default function Bag(props) {
 
             {props.isEmpty? '' : 
                 <button className="confirmar-compra">
-                    Confirme seus dados <span>{`R$ `}</span>
+                    Confirme seus dados <span>R$ {props.price}</span>
                 </button>
             }
         </div>

@@ -13,7 +13,7 @@ function App() {
   const [filtro, setFiltro] = useState('Todos');
   const [isEmpty, setIsEmpty] = useState(true);
   const [sacola, setSacola] = useState([]);
-
+  const [price, setPrice] = useState(0);
 
   useEffect(() => {
     if (filtro === 'Todos') {
@@ -54,13 +54,27 @@ function App() {
     setIsEmpty(false);
   }
 
-  
-
   return (
     <div className="App-Cubos-Flix">
-      <Header handleInput={(event)=>handleInput(event)} />
-      <Main filmesFiltrados={filmesFiltrados} handleInput={(event)=>handleInput(event)} setFiltro={(category)=> setFiltro(category)} filtro={filtro} adicionarNaSacola={(e) => adicionarNaSacola(e)} />
-      <Bag isEmpty={isEmpty} setSacola={(array)=> setSacola(array)} sacola={sacola}/>
+      <Header 
+        handleInput={(event)=>handleInput(event)} 
+      />
+
+      <Main 
+        filmesFiltrados={filmesFiltrados} 
+        handleInput={(event)=>handleInput(event)} 
+        setFiltro={(category)=> setFiltro(category)} 
+        filtro={filtro} 
+        adicionarNaSacola={(e) => adicionarNaSacola(e)} 
+      />
+
+      <Bag 
+        isEmpty={isEmpty} 
+        setSacola={(array)=> setSacola(array)} 
+        sacola={sacola}
+        price={price}
+        setPrice={(number)=> setPrice(number)}
+      />
     </div>
   );
 }
