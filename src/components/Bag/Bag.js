@@ -7,12 +7,11 @@ import { useEffect, useState } from 'react';
 
 
 export default function Bag(props) {
-    const [filmesNaSacola, setFilmesNaSacola] = useState([]);
-    useEffect(() => {
-        const fromLS = JSON.parse(localStorage.getItem('sacola'))
-       setFilmesNaSacola(fromLS)
-    }, []);
-
+    // const [filmesNaSacola, setFilmesNaSacola] = useState([]);
+    // useEffect(() => {
+    //     const fromLS = JSON.parse(localStorage.getItem('sacola'))
+    //    setFilmesNaSacola(fromLS)
+    // }, []);
 
     return(
         <div className='bag'>
@@ -21,7 +20,7 @@ export default function Bag(props) {
                 Sacola
             </div>
 
-            {props.isEmpty? <EmptyBag /> : filmesNaSacola.map(filme => {
+            {props.isEmpty? <EmptyBag /> : props.sacola.map(filme => {
                 return(
                     <FilmeAdicionado title={filme.title} capa={filme.capa} preco={filme.preco} quantidade={filme.quantidade} />
                 );
