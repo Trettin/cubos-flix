@@ -39,11 +39,12 @@ export default function Main(props) {
         
         if (temNaSacola) {
             temNaSacola.quantidade ++;
-            props.setSacola((prevState)=> prevState+[...props.sacola]);
+            props.setSacola([...props.sacola]);
             
             localStorage.setItem('sacola', JSON.stringify(props.sacola));
-            console.log(localStorage.getItem('sacola'))
-            console.log(props.sacola, 'if')
+
+            // console.log(localStorage.getItem('sacola'))
+            // console.log(props.sacola, 'if')
 
         } else {
             const filmeNaSacola = Movies.find(movie=> movie.title === event.target.value);
@@ -53,12 +54,14 @@ export default function Main(props) {
                 preco: filmeNaSacola.price,
                 quantidade: 1
             }
-            props.setSacola(()=>[...props.sacola, dadosFilme]);
+            props.setSacola([...props.sacola, dadosFilme]);
             localStorage.setItem('sacola', JSON.stringify(props.sacola));
-            console.log(localStorage.getItem('sacola'))
-            console.log(props.sacola)
+
+            // console.log(localStorage.getItem('sacola'))
+            // console.log(props.sacola)
         }
-        props.setIsEmpty(()=>false);
+        
+        props.setIsEmpty(false);
     }
 
     return(

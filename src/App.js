@@ -33,7 +33,7 @@ function App() {
     <div className="App-Cubos-Flix">
       <Header handleInput={(event)=>handleInput(event)} />
       <Main filmesFiltrados={filmesFiltrados} handleInput={(event)=>handleInput(event)} setFiltro={(category)=> setFiltro(category)} filtro={filtro} setIsEmpty={(boolean)=> setIsEmpty(boolean)} sacola={sacola} setSacola={(array)=> setSacola(array)} />
-      <Bag isEmpty={isEmpty} setSacola={(array)=> setSacola(array)}/>
+      <Bag isEmpty={isEmpty} setSacola={(array)=> setSacola(array)} sacola={sacola}/>
     </div>
   );
 }

@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react';
 
 export default function Bag(props) {
     const [filmesNaSacola, setFilmesNaSacola] = useState([]);
-    
     useEffect(() => {
-       setFilmesNaSacola(()=>JSON.parse(localStorage.getItem('sacola')))
-    }, [props.sacola]);
+        const fromLS = JSON.parse(localStorage.getItem('sacola'))
+       setFilmesNaSacola(fromLS)
+    }, []);
 
 
     return(
