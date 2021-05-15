@@ -33,8 +33,11 @@ export default function Main(props) {
     return(
         <main>
 
-            {props.temCupom || timeIsOver ? '' : <BannerPromo aplicarCupom={()=> {
-                props.setTemCupom(true)}} time={()=> setTimeIsOver(true)}/> }
+            {props.temCupom || timeIsOver ? '' : <BannerPromo 
+                aplicarCupom={()=> {props.setTemCupom(true)}}
+                time={()=> setTimeIsOver(true)}
+                />
+            }
             
 
             <div className='top'>
