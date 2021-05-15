@@ -12,7 +12,7 @@ function App() {
   const sacolaFromLocalStorage = JSON.parse(localStorage.getItem('sacola'));
   const [filmesFiltrados, setFilmesFiltrados] = useState(Movies);
   const [filtro, setFiltro] = useState('Todos');
-  const [sacola, setSacola] = useState([]);
+  const [sacola, setSacola] = useState(sacolaFromLocalStorage ? sacolaFromLocalStorage : []);
   const [price, setPrice] = useState(0);
   const [temCupom, setTemCupom] = useState(false);
 
@@ -25,14 +25,6 @@ function App() {
         setFilmesFiltrados(novoFiltro)
     }
 }, [filtro]);
-
-  useEffect(() => {
-
-    if (sacolaFromLocalStorage) {
-      setSacola(sacolaFromLocalStorage);
-    }
-    
-  }, []);
 
   function handleInput(event) {
     const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(event.target.value.toLowerCase()));
