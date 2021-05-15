@@ -1,5 +1,4 @@
 import './BannerPromo.css';
-import bannerPromo from '../../assets/images/bg-promotion.svg';
 import circleTicket from '../../assets/images/coupon-circle-icon.svg';
 import relogioIcone from '../../assets/images/time-icon.svg';
 import money from '../../assets/images/money.png';
