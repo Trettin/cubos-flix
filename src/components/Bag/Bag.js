@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 
 export default function Bag(props) {
-
+    const [inputCupom, setInputCupom] = useState('');
     useEffect(() => {
 
         if (props.sacola.length >0) {
@@ -47,37 +47,45 @@ export default function Bag(props) {
         localStorage.setItem('sacola', JSON.stringify(filmesNaSacola));
     }
 
+    function handleApplyCupom() {
+        if (inputCupom === 'htmlnaoelinguagem') props.setTemCupom(true);
+    }
+
     return(
         <div className='bag'>
             <div className='bag-header'>
                 <img className='img-sacola' src={sacola} alt="ícone de uma sacola" />
                 Sacola
             </div>
-
-            {props.sacola.length === 0 ? <EmptyBag /> : props.sacola.map(filme => {
-                return(
-                    <FilmeAdicionado 
-                        title={filme.title} 
-                        capa={filme.capa} 
-                        preco={filme.preco} 
-                        quantidade={filme.quantidade} 
-                        handleAumentarQtd={(e)=> handleAumentarQtd(e)}
-                        handleDiminuirQtd={(e)=> handleDiminuirQtd(e)}
-                    />
-                );
-            })}
+            <div className='bag-content'>
+                {props.sacola.length === 0 ? <EmptyBag /> : props.sacola.map(filme => {
+                    return(
+                        <FilmeAdicionado 
+                            title={filme.title} 
+                            capa={filme.capa} 
+                            preco={filme.preco} 
+                            quantidade={filme.quantidade} 
+                            handleAumentarQtd={(e)=> handleAumentarQtd(e)}
+                            handleDiminuirQtd={(e)=> handleDiminuirQtd(e)}
+                        />
+                    );
+                })}
+            </div>
+            
 
             <div className="bag-footer">
                 <p>Insira seu cupom</p>
                 <div className='div-input'>
-                    <input type="text" placeholder='Cupom de desconto' />
-                    <img src={ticket} alt="ticket icon" />
+                    <input type="text" placeholder='Cupom de desconto' 
+                    onKeyPress={(e)=> e.key=== 'Enter' && handleApplyCupom()} 
+                    onChange={(e)=> setInputCupom(e.target.value) }/>
+                    <img onClick={()=> handleApplyCupom()} src={ticket} alt="ticket icon" />
                 </div>
             </div>
 
             {props.sacola.length === 0? '' : 
                 <button className="confirmar-compra">
-                    Confirme seus dados <span>R$ {props.price}</span>
+                    Confirme seus dados <span>R$ {props.temCupom ? props.price *0.9 : props.price}</span>
                 </button>
             }
         </div>

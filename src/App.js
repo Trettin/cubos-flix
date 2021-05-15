@@ -14,6 +14,8 @@ function App() {
   const [filtro, setFiltro] = useState('Todos');
   const [sacola, setSacola] = useState([]);
   const [price, setPrice] = useState(0);
+  const [temCupom, setTemCupom] = useState(false);
+
   
   useEffect(() => {
     if (filtro === 'Todos') {
@@ -73,6 +75,8 @@ function App() {
         setFiltro={(category)=> setFiltro(category)} 
         filtro={filtro} 
         adicionarNaSacola={(e) => adicionarNaSacola(e)} 
+        temCupom={temCupom}
+        setTemCupom={(bool)=> setTemCupom(bool)}
       />
 
       <Bag 
@@ -80,6 +84,8 @@ function App() {
         sacola={sacola}
         price={price}
         setPrice={(number)=> setPrice(number)}
+        temCupom={temCupom}
+        setTemCupom={(bool)=> setTemCupom(bool)}
       />
     </div>
   );

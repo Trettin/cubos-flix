@@ -10,10 +10,7 @@ export default function Main(props) {
     const topMovies = Movies.slice(0,5);
 
     const [starMode, setStarMode] = useState(false);
-    const [temCupom, setTemCupom] = useState(false);
     const [timeIsOver, setTimeIsOver] = useState(false);
-
-
 
     const categories = [
         {
@@ -36,8 +33,8 @@ export default function Main(props) {
     return(
         <main>
 
-            {temCupom || timeIsOver ? '' : <BannerPromo aplicarCupom={()=> {
-                setTemCupom(true)}} time={()=> setTimeIsOver(true)}/> }
+            {props.temCupom || timeIsOver ? '' : <BannerPromo aplicarCupom={()=> {
+                props.setTemCupom(true)}} time={()=> setTimeIsOver(true)}/> }
             
 
             <div className='top'>
@@ -106,7 +103,12 @@ export default function Main(props) {
                                             {filme.starsCount}
                                         </div>
                                     </div>
-                                    <button onClick={()=> props.adicionarNaSacola(filme.title)} value={filme.title} >Sacola <span>R${filme.price}</span></button>
+                                    <button onClick={()=> props.adicionarNaSacola(filme.title)} value={filme.title} >
+                                        Sacola 
+                                        <div className='card-button-span'>
+                                            R${filme.price}
+                                         </div>
+                                    </button>
                                 </div>
 
                             </div>
