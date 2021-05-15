@@ -75,6 +75,7 @@
   position: absolute;
   right: 1rem;
   align-self: center;
+  cursor: pointer;
 }
 
 .confirmar-compra {
@@ -83,12 +84,14 @@
   color: var(--branco-1);
   font-weight: 700;
 
-  padding: 1rem;
+  padding: 1em;
   margin: 0 1rem 1.5rem;
   font-size: 0.9em;
   display: flex;
   gap: 0.5rem;
   justify-content: space-between;
+
+  cursor: pointer;
 }
 
 .confirmar-compra span {
