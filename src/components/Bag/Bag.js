@@ -85,7 +85,7 @@ export default function Bag(props) {
 
             {props.sacola.length === 0? '' : 
                 <button className="confirmar-compra">
-                    Confirme seus dados <span>R$ {props.temCupom ? props.price *0.9 : props.price}</span>
+                    Confirme seus dados <span>R$ {props.temCupom ? (props.price *0.9).toFixed(2) : (props.price).toFixed(2)}</span>
                 </button>
             }
         </div>
