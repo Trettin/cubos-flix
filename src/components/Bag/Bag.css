@@ -1,9 +1,10 @@
 .bag {
   position: fixed;
-  right: 6rem;
+  /* right: 6rem; */
   top: 8rem;
+  left: 55.875rem;
 
-  width: 18em;
+  width: 17rem;
   min-height: 420px;
   max-height: 400px;
   background-color: var(--preto-1);

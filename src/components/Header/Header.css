@@ -1,6 +1,6 @@
 header {
   background-color: var(--azul-escuro-1);
-  padding: 1.5em 96px;
+  padding: 1.5em 6rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,11 +9,11 @@ header {
 }
 
 .container--header {
-  width: 1070px;
+  width: 66.875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 0;
   color: var(--branco-1);
 }
 
