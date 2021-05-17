@@ -54,3 +54,10 @@ body {
   src: url(./assets/fonts/Quantico/Quantico-Regular.ttf);
   font-weight: 400;
 }
+
+@media (min-width: 1262.67px) {
+  :root {
+    font-size: calc(1rem + ((1vw - 12.626700000000001px) * 1.2652));
+    min-height: 0vw;
+  }
+}
