@@ -6,28 +6,28 @@ import { useState, useEffect } from 'react';
 import {Movies} from './data/data';
 
 
-
-
 function App() {
   const sacolaFromLocalStorage = JSON.parse(localStorage.getItem('sacola'));
-  const [filmesFiltrados, setFilmesFiltrados] = useState(Movies);
+  const filmesFavoritos = JSON.parse(localStorage.getItem('filmes-favoritos'));
+  const [filmesFiltrados, setFilmesFiltrados] = useState(filmesFavoritos ?? Movies);
   const [filtro, setFiltro] = useState('Todos');
-  const [sacola, setSacola] = useState(sacolaFromLocalStorage ? sacolaFromLocalStorage : []);
+  const [sacola, setSacola] = useState(sacolaFromLocalStorage ?? []);
   const [price, setPrice] = useState(0);
   const [temCupom, setTemCupom] = useState(false);
+  const [filmes, setFilmes] = useState(filmesFavoritos ?? Movies);
 
-  
+
   useEffect(() => {
     if (filtro === 'Todos') {
-        setFilmesFiltrados(Movies);
+        setFilmesFiltrados(filmes);
     } else {
-        const novoFiltro = Movies.filter(filme => filme.categories.includes(filtro));
+        const novoFiltro = filmes.filter(filme => filme.categories.includes(filtro));
         setFilmesFiltrados(novoFiltro)
     }
 }, [filtro]);
 
   function handleInput(inputValue) {
-    const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(inputValue.toLowerCase()));
+    const filmePesquisado = filmes.filter(filme => filme.title.toLowerCase().includes(inputValue.toLowerCase()));
     setFilmesFiltrados(filmePesquisado)
 
   }
@@ -41,7 +41,7 @@ function App() {
       localStorage.setItem('sacola', JSON.stringify(sacola));
 
     } else {
-      const filmeNaSacola = Movies.find(movie=> movie.title === movieTitle);
+      const filmeNaSacola = filmes.find(movie=> movie.title === movieTitle);
       const dadosFilme = {
         title: filmeNaSacola.title,
         capa: filmeNaSacola.backgroundImg,
@@ -55,7 +55,7 @@ function App() {
   }
 
   function handleFavoritos() {
-    const filtroFavoritos = Movies.filter(filme=> filme.isStarred ===true);
+    const filtroFavoritos = filmes.filter(filme=> filme.isStarred ===true);
     setFilmesFiltrados(filtroFavoritos)
   }
 

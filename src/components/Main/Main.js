@@ -3,11 +3,10 @@ import { useState } from 'react';
 import goldenStar from '../../assets/images/golden-star.svg'
 import lupa from '../../assets/images/search-icon.svg';
 import BannerPromo from '../BannerPromo/BannerPromo';
-import {Movies} from '../../data/data';
 
 
 export default function Main(props) {
-    const topMovies = Movies.slice(0,5);
+    const topMovies = props.filmesFiltrados.slice(0,5);
 
     const [timeIsOver, setTimeIsOver] = useState(false);
 
@@ -34,7 +33,7 @@ export default function Main(props) {
 
         let updatedMovie = novosFilmes.find(({ title }) => title === movieTitle);
         updatedMovie.isStarred = !updatedMovie.isStarred;
-
+        localStorage.setItem('filmes-favoritos', JSON.stringify(novosFilmes))
         props.setFilmesFiltrados(novosFilmes);
     }
 
