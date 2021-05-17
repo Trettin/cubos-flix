@@ -3,6 +3,7 @@ import sacola from '../../assets/images/bag-icon.svg';
 import EmptyBag from '../EmptyBag/EmptyBag';
 import ticket from '../../assets/images/coupon-icon.svg';
 import FilmeAdicionado from '../FilmeAdicionado/FilmeAdicionado';
+import xIcon from '../../assets/images/open-menu.svg';
 import { useEffect, useState } from 'react';
 
 
@@ -52,10 +53,13 @@ export default function Bag(props) {
     }
 
     return(
-        <div className='bag'>
+        <div className={props.sacolaOpen ? 'bag open' : 'bag'}>
             <div className='bag-header'>
-                <img className='img-sacola' src={sacola} alt="ícone de uma sacola" />
-                Sacola
+                <div className='header-title'>
+                    <img className='img-sacola' src={sacola} alt="ícone de uma sacola" />
+                    Sacola
+                </div>
+                <button className='mobileBag-x' onClick={()=> props.setSacolaOpen(false)}><img src={xIcon} alt="X icon" /></button>
             </div>
             <div className='bag-content'>
                 {props.sacola.length === 0 ? <EmptyBag /> : props.sacola.map(filme => {

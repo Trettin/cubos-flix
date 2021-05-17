@@ -15,6 +15,11 @@ export default function Header(props) {
         setMenuMode(!menuMode);
     }
 
+    function handleMobileBag(bool) {
+        handleMenu();
+        props.setSacolaOpen(bool);
+    }
+
     return(
         <header>
             
@@ -48,7 +53,11 @@ export default function Header(props) {
 
                 <button className='menu-button' onClick={()=> handleMenu()} ><img src={MenuSanduice} alt="" /></button>
                 
-                {menuMode? <MenuHamburguer handleMenu={handleMenu}/> : ''}
+                {menuMode? <MenuHamburguer 
+                    handleMenu={handleMenu}
+                    handleMobileBag={(bool)=> handleMobileBag(bool)}
+                    handleFavoritos={()=> props.handleFavoritos()}
+                    /> : ''}
 
             </div>
         </header>

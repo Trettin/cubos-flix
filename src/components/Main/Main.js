@@ -6,7 +6,7 @@ import BannerPromo from '../BannerPromo/BannerPromo';
 
 
 export default function Main(props) {
-    const topMovies = props.filmesFiltrados.slice(0,5);
+    const topMovies = props.filmes.slice(0,5);
 
     const [timeIsOver, setTimeIsOver] = useState(false);
 

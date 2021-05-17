@@ -31,8 +31,21 @@
   gap: 0.25rem;
 }
 
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
 .img-sacola {
   width: 1.5em;
+}
+
+.mobileBag-x {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+  padding: 0;
 }
 
 .bag-content {
@@ -101,8 +114,24 @@
 
 @media (max-width: 68.125rem) {
   .bag {
-    position: unset;
-    margin: 0 1.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
     width: auto;
+    z-index: 3;
+    max-height: unset;
+    display: none;
+    padding: 1.5rem;
+  }
+  .open {
+    display: flex;
+  }
+
+  .bag-header {
+    padding: 0.5rem;
+    justify-content: space-between;
   }
 }

@@ -9,7 +9,7 @@ export default function MenuHamburguer(props) {
 
     return(
         <div className="menu-hamburguer">
-            <button className='x' onClick={props.handleMenu}><img src={xIcon} alt="" /></button> 
+            <button className='x' onClick={props.handleMenu}><img src={xIcon} alt="x icon" /></button> 
 
              <div className="profile-mobile">
                 <img src={gabriel} alt="imagem do usuário" />
@@ -19,7 +19,7 @@ export default function MenuHamburguer(props) {
             <div className="favoritos-mobile">
 
                     <img src={bookmark} alt="ícone de marcador de página" />
-                    <button>Favoritos</button>
+                    <button onClick={()=> props.handleFavoritos()}>Favoritos</button>
 
             </div>
 
@@ -30,7 +30,7 @@ export default function MenuHamburguer(props) {
 
             <div className="sacola">
                     <img src={sacola} alt="ícone de sacola" />
-                    <button>Sacola</button>
+                    <button onClick={()=> props.handleMobileBag(true)} >Sacola</button>
             </div>
 	
         </div>

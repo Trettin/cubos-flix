@@ -15,6 +15,7 @@ function App() {
   const [price, setPrice] = useState(0);
   const [temCupom, setTemCupom] = useState(false);
   const [filmes, setFilmes] = useState(filmesFavoritos ?? Movies);
+  const [sacolaOpen, setSacolaOpen] = useState(false);
 
 
   useEffect(() => {
@@ -64,6 +65,7 @@ function App() {
       <Header 
         handleInput={(event)=>handleInput(event)} 
         handleFavoritos={()=> handleFavoritos()}
+        setSacolaOpen={(bool)=> setSacolaOpen(bool)}
       />
 
       <Main 
@@ -75,6 +77,7 @@ function App() {
         adicionarNaSacola={(e) => adicionarNaSacola(e)} 
         temCupom={temCupom}
         setTemCupom={(bool)=> setTemCupom(bool)}
+        filmes={filmes}
       />
 
       <Bag 
@@ -84,6 +87,8 @@ function App() {
         setPrice={(number)=> setPrice(number)}
         temCupom={temCupom}
         setTemCupom={(bool)=> setTemCupom(bool)}
+        sacolaOpen={sacolaOpen}
+        setSacolaOpen={(bool)=> setSacolaOpen(bool)}
       />
     </div>
   );
