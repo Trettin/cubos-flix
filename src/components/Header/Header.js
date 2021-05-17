@@ -43,7 +43,7 @@ export default function Header(props) {
 
                 <div className="promocoes">
                     <img src={promocoes} alt="ícone de promoções" />
-                    <a href="https://trettin-cubos-flix.netlify.app/">Promoções</a>
+                    <button>Promoções</button> 
                 </div>
 
                 <div className="profile">

@@ -63,7 +63,8 @@ header {
   grid-area: favoritos;
 }
 
-.favoritos button {
+.favoritos button,
+.promocoes button {
   all: unset;
   cursor: pointer;
 }
