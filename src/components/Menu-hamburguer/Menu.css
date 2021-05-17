@@ -17,9 +17,13 @@
 
 .menu-hamburguer button {
   background-color: transparent;
+  color: inherit;
   border: none;
   outline: none;
   padding: 0;
+}
+
+.x {
   align-self: flex-end;
 }
 
@@ -48,10 +52,6 @@
 .sacola img {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-a {
-  all: unset;
 }
 
 @media (min-width: 1090px) {

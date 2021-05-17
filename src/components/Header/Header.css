@@ -9,6 +9,7 @@ header {
 }
 
 .container--header {
+  width: 1070px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,6 +54,7 @@ header {
   width: 1.5rem;
   height: 1.5rem;
   align-self: center;
+  cursor: pointer;
 }
 
 .favoritos {
@@ -96,6 +98,7 @@ a {
   }
 
   .container--header {
+    width: unset;
     display: flex;
     justify-content: space-between;
     align-items: center;

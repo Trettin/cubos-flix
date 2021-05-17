@@ -24,8 +24,8 @@ export default function Header(props) {
 
                 <div className="pesquisa">
                     
-                    <input type="text" placeholder='Pesquise filmes...' onChange={(event)=> props.handleInput(event)} />
-                    <img className='lupa' src={lupa} alt="ícone de pesquisa" />
+                    <input type="text" placeholder='Pesquise filmes...' onKeyPress={(e)=> e.key === 'Enter' && props.handleInput(e.target.value)} />
+                    <img className='lupa' src={lupa} alt="ícone de pesquisa" onClick={(e) => props.handleInput(e.target.previousElementSibling.value)}/>
 
                 </div>
                 

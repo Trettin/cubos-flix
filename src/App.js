@@ -26,10 +26,9 @@ function App() {
     }
 }, [filtro]);
 
-  function handleInput(event) {
-    const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(event.target.value.toLowerCase()));
+  function handleInput(inputValue) {
+    const filmePesquisado = Movies.filter(filme => filme.title.toLowerCase().includes(inputValue.toLowerCase()));
     setFilmesFiltrados(filmePesquisado)
-    console.log(sacola)    
 
   }
 
@@ -62,7 +61,8 @@ function App() {
       />
 
       <Main 
-        filmesFiltrados={filmesFiltrados} 
+        filmesFiltrados={filmesFiltrados}
+        setFilmesFiltrados={(array)=> setFilmesFiltrados(array)} 
         handleInput={(event)=>handleInput(event)} 
         setFiltro={(category)=> setFiltro(category)} 
         filtro={filtro} 
