@@ -54,7 +54,7 @@
   height: 1.5rem;
 }
 
-@media (min-width: 1090px) {
+@media (min-width: 68.125rem) {
   .menu-hamburguer {
     display: none;
   }

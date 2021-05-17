@@ -72,13 +72,13 @@
   right: 2.5rem;
 }
 
-@media (max-width: 1090px) {
+@media (max-width: 68.125rem) {
   .cupom-desconto {
     background: url("../../assets/images/mobile-bg-promotion.svg") no-repeat
       right / cover;
 
     width: 100%;
-    height: 281px;
+    height: 17.563rem;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
 
@@ -109,7 +109,7 @@
   }
 
   .aproveite h1 {
-    width: 200px;
+    width: 12.5rem;
   }
 
   .finalizaEm {

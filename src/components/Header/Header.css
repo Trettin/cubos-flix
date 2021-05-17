@@ -59,20 +59,20 @@ header {
 
 .favoritos {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   grid-area: favoritos;
 }
 
 .promocoes {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   grid-area: promocoes;
 }
 
 .profile {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   grid-area: profile;
 }
 
@@ -91,7 +91,7 @@ a {
   all: unset;
 }
 
-@media (max-width: 1090px) {
+@media (max-width: 68.125rem) {
   header {
     background-color: var(--azul-escuro-1);
     padding: 1.5em 1.5rem;

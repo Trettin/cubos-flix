@@ -5,8 +5,8 @@
   left: 55.875rem;
 
   width: 17rem;
-  min-height: 420px;
-  max-height: 400px;
+  min-height: 25rem;
+  max-height: 25rem;
   background-color: var(--preto-1);
 
   display: flex;
@@ -63,7 +63,7 @@
   opacity: 0.4;
   border: none;
 
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
 }
 
@@ -99,7 +99,7 @@
   display: flex;
 }
 
-@media (max-width: 1090px) {
+@media (max-width: 68.125rem) {
   .bag {
     position: unset;
     margin: 0 1.5rem 2rem;
