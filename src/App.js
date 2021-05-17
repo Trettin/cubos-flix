@@ -14,7 +14,7 @@ function App() {
   const [sacola, setSacola] = useState(sacolaFromLocalStorage ?? []);
   const [price, setPrice] = useState(0);
   const [temCupom, setTemCupom] = useState(false);
-  const [filmes, setFilmes] = useState(filmesFavoritos ?? Movies);
+  const [filmes,] = useState(filmesFavoritos ?? Movies);
   const [sacolaOpen, setSacolaOpen] = useState(false);
 
 

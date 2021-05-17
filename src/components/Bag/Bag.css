@@ -46,6 +46,7 @@
   border: none;
   outline: none;
   padding: 0;
+  display: none;
 }
 
 .bag-content {
@@ -133,5 +134,9 @@
   .bag-header {
     padding: 0.5rem;
     justify-content: space-between;
+  }
+
+  .mobileBag-x {
+    display: inline;
   }
 }
