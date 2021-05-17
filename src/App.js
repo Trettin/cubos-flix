@@ -54,10 +54,16 @@ function App() {
     }
   }
 
+  function handleFavoritos() {
+    const filtroFavoritos = Movies.filter(filme=> filme.isStarred ===true);
+    setFilmesFiltrados(filtroFavoritos)
+  }
+
   return (
     <div className="App-Cubos-Flix">
       <Header 
         handleInput={(event)=>handleInput(event)} 
+        handleFavoritos={()=> handleFavoritos()}
       />
 
       <Main 

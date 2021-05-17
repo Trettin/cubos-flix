@@ -63,6 +63,11 @@ header {
   grid-area: favoritos;
 }
 
+.favoritos button {
+  all: unset;
+  cursor: pointer;
+}
+
 .promocoes {
   display: flex;
   gap: 0.5rem;

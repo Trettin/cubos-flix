@@ -32,7 +32,7 @@ export default function Header(props) {
                 <div className="favoritos">
 
                     <img src={bookmark} alt="" />
-                    <a href="https://trettin-cubos-flix.netlify.app/">Favoritos</a>
+                    <button onClick={()=> props.handleFavoritos()} >Favoritos</button>
 
                 </div>
 
