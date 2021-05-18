@@ -169,6 +169,7 @@ main {
   main {
     padding: 1.5rem;
     margin-top: 6.5rem;
+    overflow: hidden;
   }
 
   .top-filmes {
