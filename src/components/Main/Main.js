@@ -29,7 +29,7 @@ export default function Main(props) {
     ]
     
     function handleStar(movieTitle) {
-        const novosFilmes = [...props.filmesFiltrados];
+        const novosFilmes = [...props.filmes];
 
         let updatedMovie = novosFilmes.find(({ title }) => title === movieTitle);
         updatedMovie.isStarred = !updatedMovie.isStarred;
