@@ -24,6 +24,7 @@ main {
 
 .filme-card {
   aspect-ratio: 168/300;
+  min-height: 15rem;
   width: var(--movie-card-width);
   padding: 0.75rem 0.5rem 0.375rem;
   display: flex;
