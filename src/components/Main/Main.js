@@ -8,8 +8,6 @@ import BannerPromo from '../BannerPromo/BannerPromo';
 export default function Main(props) {
     const topMovies = props.filmes.slice(0,5);
 
-    const [timeIsOver, setTimeIsOver] = useState(false);
-
     const categories = [
         {
             filtro: 'Todos', dataCategory: 'Todos'
@@ -40,9 +38,9 @@ export default function Main(props) {
     return(
         <main>
 
-            {props.temCupom || timeIsOver ? '' : <BannerPromo 
+            {props.temCupom || props.timeIsOver ? '' : <BannerPromo 
                 aplicarCupom={()=> {props.setTemCupom(true)}}
-                time={()=> setTimeIsOver(true)}
+                time={()=> props.setTimeIsOver(true)}
                 />
             }
             

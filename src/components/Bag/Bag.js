@@ -49,7 +49,7 @@ export default function Bag(props) {
     }
 
     function handleApplyCupom() {
-        if (inputCupom === 'htmlnaoelinguagem') props.setTemCupom(true);
+        if (inputCupom === 'htmlnaoelinguagem' && !props.timeIsOver) props.setTemCupom(true);
     }
 
     return(

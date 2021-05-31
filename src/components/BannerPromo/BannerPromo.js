@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 
 export default function BannerPromo({aplicarCupom, time}) {
-    const [tempoRestante, setTempoRestante] = useState(300);
+    const [tempoRestante, setTempoRestante] = useState(3);
 
 
     const minutos = String(Math.floor(tempoRestante / 60)).padStart(2, "0");
