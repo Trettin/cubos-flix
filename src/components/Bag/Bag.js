@@ -2,7 +2,7 @@ import './Bag.css';
 import sacola from '../../assets/images/bag-icon.svg';
 import EmptyBag from '../EmptyBag/EmptyBag';
 import ticket from '../../assets/images/coupon-icon.svg';
-import FilmeAdicionado from '../FilmeAdicionado/FilmeAdicionado';
+import MovieInBag from '../MovieInBag/MovieInBag';
 import xIcon from '../../assets/images/open-menu.svg';
 import { useEffect, useState } from 'react';
 
@@ -64,7 +64,7 @@ export default function Bag(props) {
             <div className='bag-content'>
                 {props.sacola.length === 0 ? <EmptyBag /> : props.sacola.map(filme => {
                     return(
-                        <FilmeAdicionado 
+                        <MovieInBag 
                             title={filme.title} 
                             capa={filme.capa} 
                             preco={filme.preco} 
